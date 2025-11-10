@@ -4,7 +4,9 @@ def get_book_text(file_path):
     return book_text
 
 def main():
-    print(get_book_text("./books/frankenstein.txt"))
+    string = get_book_text("./books/frankenstein.txt")
+    number_of_words = get_words(string)
+    print(f"Found {number_of_words} total words")
     return
 
 main()    
