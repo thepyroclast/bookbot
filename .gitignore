@@ -1,0 +1,5 @@
+#gitignore for bookbot
+
+# a directory containing files of books for the bookbot to use
+books
+
