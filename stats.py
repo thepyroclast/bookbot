@@ -18,10 +18,13 @@ def sort_dict(characters_dict):
     new_list = []
     for key in characters_dict.keys():
         new_list.append({"char": key, "num": characters_dict[key]})
-        #new_list.append({key: characters_dict[key]})
     
-    print(new_list)
+    def get_num(a):
+        return a["num"]
+    
+    new_list.sort(key=get_num, reverse=True)
+    return new_list
 
 new_dict = {"b": 2, "c": 68, "x": 4,}
 
-sort_dict(new_dict)
+print(sort_dict(new_dict))
