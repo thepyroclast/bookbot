@@ -27,7 +27,3 @@ def sort_dict(characters_dict):
     
     new_list.sort(key=get_num, reverse=True)
     return new_list
-
-new_dict = {"b": 2, "c": 68, "x": 4, "@": 8,}
-
-print(sort_dict(new_dict))

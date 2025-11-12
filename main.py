@@ -16,7 +16,9 @@ def main():
     print("----------- Word Count ----------")
     print(f"Found {number_of_words} total words")
     print("--------- Character Count -------")
-    print(sorted_letters)
+    for dict_pair in sorted_letters:
+        print(f"{dict_pair["char"]}: {dict_pair["num"]}")
+    #print(sorted_letters)
     print("============= END ===============")
     return
 
