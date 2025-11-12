@@ -1,18 +1,23 @@
+import sys 
+from stats import get_words 
+from stats import get_letters_and_count 
+from stats import sort_dict 
+
 def get_book_text(file_path):
     with open(file_path) as f:
         book_text = f.read()
     return book_text
 
-from stats import get_words 
-from stats import get_letters_and_count 
-from stats import sort_dict 
 def main():
-    strings = get_book_text("./books/frankenstein.txt")
+    if len(sys.argv) < 2:
+        print("Usage: python3 main.py <path_to_book>")
+        sys.exit(1)
+    strings = get_book_text(sys.argv[1])
     number_of_words = get_words(strings)
     letter_count = get_letters_and_count(strings)
     sorted_letters = sort_dict(letter_count)
     print("============ BOOKBOT ============")
-    print("Analyzing book found at books/frankenstein.txt...")
+    print(f"Analyzing book found at {sys.argv[1]}...")
     print("----------- Word Count ----------")
     print(f"Found {number_of_words} total words")
     print("--------- Character Count -------")
