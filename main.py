@@ -5,12 +5,19 @@ def get_book_text(file_path):
 
 from stats import get_words 
 from stats import get_letters_and_count 
+from stats import sort_dict 
 def main():
     strings = get_book_text("./books/frankenstein.txt")
     number_of_words = get_words(strings)
-    print(f"Found {number_of_words} total words")
     letter_count = get_letters_and_count(strings)
-    print(letter_count)
+    sorted_letters = sort_dict(letter_count)
+    print("============ BOOKBOT ============")
+    print("Analyzing book found at books/frankenstein.txt...")
+    print("----------- Word Count ----------")
+    print(f"Found {number_of_words} total words")
+    print("--------- Character Count -------")
+    print(sorted_letters)
+    print("============= END ===============")
     return
 
 main()    

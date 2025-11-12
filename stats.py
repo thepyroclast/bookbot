@@ -17,7 +17,10 @@ def get_letters_and_count(string):
 def sort_dict(characters_dict):
     new_list = []
     for key in characters_dict.keys():
-        new_list.append({"char": key, "num": characters_dict[key]})
+        if key.isalpha():
+            new_list.append({"char": key, "num": characters_dict[key]})
+        else:
+            continue
     
     def get_num(a):
         return a["num"]
@@ -25,6 +28,6 @@ def sort_dict(characters_dict):
     new_list.sort(key=get_num, reverse=True)
     return new_list
 
-new_dict = {"b": 2, "c": 68, "x": 4,}
+new_dict = {"b": 2, "c": 68, "x": 4, "@": 8,}
 
 print(sort_dict(new_dict))
